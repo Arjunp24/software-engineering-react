@@ -1,7 +1,7 @@
 import axios from "axios";
 // const BASE_URL = "https://cs5500-01-sp22.herokuapp.com";
-//"http://localhost:4000";
-const BASE_URL = process.env.REACT_APP_BASE_URL;
+// const BASE_URL = process.env.REACT_APP_BASE_URL;
+const BASE_URL = "https://fathomless-lake-10838.herokuapp.com"
 const USERS_API = `${BASE_URL}/api/users`;
 
 export const createUser = (user) =>
@@ -13,7 +13,11 @@ export const findAllUsers = () =>
         .then(response => response.data);
 
 export const findUserById = (uid) =>
-    axios.get(`${USERS_API}/${uid}`)
+    axios.get(`${BASE_URL}/users/${uid}`)
+        .then(response => response.data);
+
+export const findIdByUsername = (username) =>
+    axios.get(`${USERS_API}/${username}/id`)
         .then(response => response.data);
 
 export const deleteUser = (uid) =>

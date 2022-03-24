@@ -1,6 +1,10 @@
+/**
+ * @jest-environment node
+ */
+
 import {
   createUser,
-  deleteUsersByUsername, findAllUsers,
+  deleteUsersByUsername, findAllUsers, findIdByUsername,
   findUserById
 } from "../services/users-service";
 
